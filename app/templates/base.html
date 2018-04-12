@@ -10,6 +10,16 @@
 </head>
 
 <body>
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/login/">Login</a>
+      </li>
+    </ul>
+  </nav>
   {% with messages = get_flashed_messages() %} {% for message in messages %}
   <div class="notification is-primary">
     <button class="delete"></button>
@@ -17,10 +27,6 @@
   </div>
   {% endfor %} {% endwith %}
   <section class="section">
-    <div>
-      <a href="/">Home</a>
-      <a href="/login/">Login</a>
-    </div>
     <div class="container">
       {% block content %}{% endblock %}
     </div>
