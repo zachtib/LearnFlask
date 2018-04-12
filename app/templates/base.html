@@ -10,21 +10,19 @@
 </head>
 
 <body>
-  <nav class="breadcrumb" aria-label="breadcrumb">
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
+  <nav class="navbar is-success" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ url_for('index') }}">
+        Home
+      </a>
+    </div>
+    <div class="navbar-menu">
       {% if current_user.is_anonymous %}
-      <li>
-        <a href="/login/">Login</a>
-      </li>
+      <a class="navbar-item" href="/login/">Login</a>
       {% else %}
-      <li>
-        <a href="/logout/">Logout</a>
-      </li>
+      <a class="navbar-item" href="/logout/">Logout</a>
       {% endif %}
-    </ul>
+    </div>
   </nav>
   {% with messages = get_flashed_messages() %} {% for message in messages %}
   <div class="notification is-primary">

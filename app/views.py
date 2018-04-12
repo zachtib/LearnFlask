@@ -9,7 +9,7 @@ from flask_login import current_user, login_user, logout_user
 @app.route('/')
 def index():
     app.logger.debug('Hello, World!')
-    return render_template('index.html', user=current_user)
+    return render_template('index.html')
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
